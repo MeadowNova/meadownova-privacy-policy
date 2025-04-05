@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OAuth Callback - Meadow Nova</title>
+</head>
+<body>
+  <h2>Redirect Successful!</h2>
+  <p>If you're seeing this page, Pinterest has redirected here after authentication.</p>
+  <p><strong>Full Redirect URL:</strong></p>
+  <pre id="url"></pre>
+
+  <script>
+    document.getElementById("url").textContent = window.location.href;
+  </script>
+</body>
+</html>
