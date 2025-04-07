@@ -1,146 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meadow Nova – Etsy Trend Insights</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
-  <style>
-    /* Basic Reset & Defaults */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-size: 16px; /* Base font size */
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Lato', Arial, sans-serif; /* Fallback font */
-      line-height: 1.7;
-      color: #4a4a4a; /* Dark gray for text */
-      background-color: #f9f9f9; /* Softer background */
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Ensure footer stays at bottom */
-      align-items: center; /* Center container vertically */
-      justify-content: center; /* Center container horizontally */
-      padding: 2rem 1rem; /* Add padding for smaller screens */
-    }
-
-    /* Container for content */
-    .container {
-      max-width: 700px;
-      width: 100%;
-      background-color: #ffffff; /* White background for content */
-      padding: 3rem 2.5rem;
-      border-radius: 8px; /* Slightly rounded corners */
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow */
-      text-align: center;
-      flex-grow: 1; /* Allow container to grow if needed */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Header section */
-    header {
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-family: 'Montserrat', sans-serif; /* Distinct heading font */
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #2c3e50; /* Dark blue/gray heading color */
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-
-    /* Main content paragraphs */
-    main p {
-      font-size: 1.1rem;
-      color: #555; /* Slightly lighter text color */
-      max-width: 600px; /* Keep lines readable */
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Link Styling */
-    a {
-      color: #3498db; /* Professional blue for links */
-      text-decoration: none; /* Remove default underline */
-      font-weight: bold;
-      border-bottom: 1px solid transparent; /* Prepare for hover effect */
-      transition: color 0.3s ease, border-color 0.3s ease;
-    }
-
-    a:hover,
-    a:focus {
-      color: #2980b9; /* Darken link on hover/focus */
-      border-bottom-color: #2980b9; /* Underline on hover/focus */
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 3rem; /* Space above the footer */
-      font-size: 0.9rem;
-      color: #aaa; /* Light gray for footer text */
-      text-align: center;
-      width: 100%;
-      padding-top: 1rem; /* Add some padding within the footer area */
-       /* Footer is outside the main white container */
-    }
-
-     /* Responsive Adjustments */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      main p {
-        font-size: 1rem;
-      }
-      .container {
-        padding: 2rem 1.5rem;
-      }
-      body {
-         padding: 1rem 0.5rem;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Meadow Nova Newsletter</title>
+    
+    <!-- Tailwind CSS via jsdelivr -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1435300');
+    </script>
+    <!-- End MailerLite Universal -->
+    
+    <style>
+        :root {
+            --teal: #0E3B43;
+            --peach: #F08C79;
+            --cream: #FDFBF5;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--cream);
+            color: var(--teal);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .btn-peach {
+            background-color: var(--peach);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-peach:hover {
+            background-color: #E07A67;
+            transform: translateY(-2px);
+        }
+        
+        .teal-text {
+            color: var(--teal);
+        }
+        
+        .container-custom {
+            max-width: 500px;
+        }
+        
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
-<body>
-
-  <div class="container">
-    <header>
-      <h1>Welcome to Meadow Nova</h1>
-    </header>
-
-    <main>
-      <p>
-        We help print-on-demand sellers discover top-performing Pinterest trends
-        and optimize their Etsy product listings with AI-powered insights.
-      </p>
-      <p>
-        Our full website is launching soon. For now, please review our <a href="/meadow-nova-privacy-policy">Privacy Policy</a>.
-      </p>
-    </main>
-  </div>
-
-  <footer>
-    © 2025 Meadow Nova. All Rights Reserved.
-  </footer>
-
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="container-custom mx-auto bg-white rounded-lg shadow-lg p-8 my-4">
+        <div class="flex flex-col items-center text-center">
+            <!-- Logo -->
+            <div class="logo-container mb-6">
+                <img src="images/meadow_nova_logo.png" alt="Meadow Nova Logo" class="w-full h-full">
+            </div>
+            
+            <!-- Headline -->
+            <h1 class="text-3xl font-bold mb-3 teal-text">Join Our Newsletter</h1>
+            
+            <!-- Benefits -->
+            <p class="text-lg mb-8 max-w-md">Get exclusive discounts, early access to new designs, and cat-inspired art updates delivered straight to your inbox.</p>
+            
+            <!-- MailerLite Form -->
+            <div class="w-full">
+                <div class="ml-embedded" data-form="jETQIS"></div>
+            </div>
+            
+            <!-- Privacy Note -->
+            <p class="text-sm mt-6 text-gray-500">We respect your privacy and will never share your information.</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-6 mb-4 text-center text-sm text-gray-500">
+        <p>&copy; 2023 Meadow Nova. All rights reserved.</p>
+    </footer>
 </body>
 </html>
