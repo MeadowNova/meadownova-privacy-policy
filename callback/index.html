@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>OAuth Callback - Meadow Nova</title>
+<meta charset="UTF-8" />
+<title>OAuth Callback - Meadow Nova</title>
+<style>
+body { font-family: sans-serif; }
+pre { background: #f0f0f0; padding: 10px; }
+</style>
 </head>
 <body>
-  <h2>Redirect Successful!</h2>
-  <p>If you're seeing this page, Pinterest has redirected here after authentication.</p>
-  <p><strong>Full Redirect URL:</strong></p>
-  <pre id="url"></pre>
+<h2>OAuth Redirect Successful!</h2>
 
-  <script>
-    document.getElementById("url").textContent = window.location.href;
-  </script>
+<p><strong>Full Redirect URL:</strong></p>
+<pre id="full_url"></pre>
+
+<p><strong>Authorization Code:</strong></p>
+<pre id="code"></pre>
+
+<p><strong>State Parameter:</strong></p>
+<pre id="state"></pre>
+
+<p><strong>Notes:</strong></p>
+<ul>
+  <li>If this was a <b>Pinterest</b> login, you may not see a code here.</li>
+  <li>If this was an <b>Etsy</b> login, copy the code above and use it to exchange for tokens.</li>
+</ul>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get('code');
+const state = params.get('state');
+
+document.getElementById('full_url').textContent = window.location.href;
+document.getElementById('code').textContent = code ? code : 'No code found.';
+document.getElementById('state').textContent = state ? state : 'No state found.';
+</script>
 </body>
 </html>
